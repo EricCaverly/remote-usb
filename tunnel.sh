@@ -36,7 +36,8 @@ fi
 # Immediately run the command to attach the USB device on the BUS found before available at localhost (which ends up being the port forwarded from this computer)
 # Wait 1 second for the connection to be formed. Show a connected message, ports connected, and inform the user how to exit
 echo -e "---[SERVER]---"
-ssh -R localhost:3240:127.0.0.3:3240 $USR@$REMOTE "bash -c 'https://github.com/EricCaverly/remote-usb/remote.sh' -s ${BUSES[*]}"
+
+ssh -R localhost:3240:127.0.0.3:3240 $USR@$REMOTE "curl -sSL https://raw.githubusercontent.com/EricCaverly/remote-usb/refs/heads/main/remote.sh | bash -s -- ${BUSES[@]}"
 
 echo -e "---[LOCAL]---"
 # Unbind the USB port from this computer

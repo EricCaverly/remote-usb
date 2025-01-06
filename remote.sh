@@ -5,4 +5,4 @@ for BUS in "$@"; do
 done
 echo "attached" & sleep 1
 usbip port
-echo "connected,CTRL+C to exit"'
+echo "connected,CTRL+C to exit"
